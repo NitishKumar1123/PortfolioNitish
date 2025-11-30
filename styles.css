@@ -918,3 +918,36 @@ section:nth-child(odd) .animate.scroll,
         width:0;
     }
 }
+
+
+.projects .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    padding: 25px;
+    border-radius: 12px;
+    background: #1e1e1e;
+    color: #fff;
+    transition: 0.3s ease;
+    font-size: 1.1rem; /* Increased card text */
+}
+
+.project-card h2 {
+    font-size: 1.8rem; /* Increased title size */
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.project-card p {
+    font-size: 1.1rem; /* Increased paragraph size */
+    line-height: 1.6;
+}
+
+.project-card .btn {
+    margin-top: 12px;
+    padding: 12px 22px;
+    font-size: 1.1rem; /* Bigger button text */
+}
