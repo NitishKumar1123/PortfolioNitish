@@ -212,6 +212,31 @@ section{
 .btn-box .btn:hover::before{
     width:100%;
 }
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;                 /* Dark text */
+    background: linear-gradient(135deg, #2ee59d, #22c55e); /* Green-Teal */
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.35);
+}
+
+/* Hover Effect */
+.btn:hover {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.5);
+}
+
+/* Active (Click) */
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
 
 .home-sci{
     position: absolute;
