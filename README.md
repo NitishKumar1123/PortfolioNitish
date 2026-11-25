@@ -18,7 +18,7 @@ Open `index.html` in a browser, or serve this directory with any static file ser
 
 ## Updating content
 
-- Edit `index.html` to update profile, résumé, project, education and contact details.
+- Edit `index.html` to update profile, résumé, skills, projects, education and contact details.
 - Replace `Nitish CV.pdf` to update the résumé download.
 - Edit `styles.css` to adjust the theme, layout and responsive styles.
 - Edit `script.js` to update navigation, project filtering or contact form behavior.
