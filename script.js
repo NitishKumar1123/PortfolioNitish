@@ -91,6 +91,60 @@ filterButtons.forEach((button) => {
   });
 });
 
+const codeforcesCard = document.querySelector("[data-codeforces-card]");
+const codeforcesStreak = document.querySelector("[data-codeforces-streak]");
+const codeforcesActiveDays = document.querySelector("[data-codeforces-days]");
+const codeforcesStatus = document.querySelector("[data-codeforces-status]");
+
+async function updateCodeforcesActivity() {
+  try {
+    const response = await fetch(
+      "https://codeforces.com/api/user.status?handle=Nitish_Kumar001&from=1&count=1000",
+    );
+    if (!response.ok) {
+      throw new Error(`Codeforces returned HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+    if (data.status !== "OK" || !Array.isArray(data.result)) {
+      throw new Error(data.comment || "Codeforces returned an invalid activity response");
+    }
+
+    const activityDays = new Set(
+      data.result.map((submission) => Math.floor(submission.creationTimeSeconds / 86400)),
+    );
+    codeforcesActiveDays.textContent = String(activityDays.size);
+
+    if (activityDays.size === 0) {
+      codeforcesStreak.textContent = "—";
+      codeforcesStatus.textContent = "No public submissions are available for this handle yet.";
+      return;
+    }
+
+    let activeDay = Math.floor(Date.now() / 86400000);
+    if (!activityDays.has(activeDay) && activityDays.has(activeDay - 1)) {
+      activeDay -= 1;
+    }
+
+    let currentStreak = 0;
+    while (activityDays.has(activeDay)) {
+      currentStreak += 1;
+      activeDay -= 1;
+    }
+
+    codeforcesStreak.textContent = String(currentStreak);
+    codeforcesStatus.textContent = "Calculated from public submission days (UTC) in the latest 1,000 submissions.";
+  } catch (error) {
+    console.error("Could not load Codeforces activity:", error);
+    codeforcesStreak.textContent = "—";
+    codeforcesActiveDays.textContent = "—";
+    codeforcesStatus.textContent = "Live activity couldn’t be loaded. Open the Codeforces profile to check it.";
+    codeforcesCard.dataset.activityState = "unavailable";
+  }
+}
+
+updateCodeforcesActivity();
+
 const contactForm = document.querySelector(".contact-form");
 const formStatus = document.querySelector(".form-status");
 contactForm.addEventListener("submit", async (event) => {

@@ -325,6 +325,16 @@ svg {
   fill: currentColor;
 }
 
+.hero-socials .social-monogram {
+  display: grid;
+  width: 1rem;
+  height: 1rem;
+  place-items: center;
+  color: currentColor;
+  font-size: 0.56rem;
+  font-weight: 800;
+}
+
 .hero-art {
   position: relative;
   width: 100%;
@@ -1125,6 +1135,262 @@ svg {
   font-size: 0.65rem;
 }
 
+.project-archive {
+  margin-top: 3.5rem;
+  border-top: 1px solid #3b4842;
+  border-bottom: 1px solid #3b4842;
+}
+
+.project-archive summary {
+  display: flex;
+  min-height: 4.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  list-style: none;
+}
+
+.project-archive summary::-webkit-details-marker {
+  display: none;
+}
+
+.archive-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--green);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.archive-count > span {
+  display: grid;
+  width: 1.5rem;
+  height: 1.5rem;
+  place-items: center;
+  border: 1px solid #53615a;
+  border-radius: 50%;
+  transition: transform 180ms ease;
+}
+
+.project-archive[open] .archive-count > span {
+  transform: rotate(45deg);
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  padding-bottom: 1rem;
+}
+
+.archive-project {
+  min-width: 0;
+  padding: 1.25rem 1.25rem 1.7rem 0;
+  border-top: 1px solid #3b4842;
+}
+
+.archive-project:not(:nth-child(3n + 1)) {
+  padding-left: 1.25rem;
+  border-left: 1px solid #3b4842;
+}
+
+.archive-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  color: #9ca8a0;
+  font-size: 0.59rem;
+}
+
+.archive-project h3 {
+  margin: 0.8rem 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.4;
+}
+
+.archive-project p {
+  min-height: 4.7rem;
+  margin: 0 0 0.85rem;
+  color: #bdc5bf;
+  font-size: 0.72rem;
+  line-height: 1.75;
+}
+
+.archive-project .tag-row {
+  gap: 0.35rem;
+}
+
+.archive-project .tag-row span {
+  padding: 0.22rem 0.48rem;
+  font-size: 0.57rem;
+}
+
+.archive-project .project-link {
+  margin-top: 1rem;
+  font-size: 0.68rem;
+}
+
+.streaks-section {
+  background: var(--paper);
+}
+
+.streak-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 3rem;
+}
+
+.streak-card {
+  min-width: 0;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.streak-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.platform-mark {
+  display: grid;
+  width: 2.15rem;
+  height: 2.15rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.leetcode-mark {
+  border-color: #efbe79;
+  color: #c97b30;
+}
+
+.codeforces-mark {
+  border-color: #9eb4d0;
+  color: #3a78bd;
+}
+
+.streak-platform {
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.live-indicator > span {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: #88ae45;
+}
+
+.snapshot-indicator > span {
+  background: #dbac4b;
+}
+
+.streak-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: 2rem;
+  padding-bottom: 1.55rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.streak-main-metric,
+.streak-secondary-metric {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.streak-main-metric strong {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.09em;
+  line-height: 1;
+}
+
+.streak-secondary-metric strong {
+  color: var(--green-dark);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.08em;
+  line-height: 1;
+}
+
+.streak-active-metric strong {
+  color: var(--ink);
+}
+
+.streak-main-metric span,
+.streak-secondary-metric span {
+  color: var(--muted);
+  font-size: 0.67rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.streak-note {
+  min-height: 3.8rem;
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.75;
+}
+
+.streak-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.45rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.streaks-footnote {
+  margin: 1.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.65rem;
+}
+
 .education-section {
   background: var(--paper-deep);
 }
@@ -1525,6 +1791,10 @@ svg {
     display: none;
   }
 
+  .hero-socials a .social-monogram {
+    display: grid;
+  }
+
   .hero-socials svg {
     width: 1.2rem;
     height: 1.2rem;
@@ -1560,6 +1830,28 @@ svg {
   .project-card.project-featured {
     grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.85fr);
     gap: 1.5rem;
+  }
+
+  .streak-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .archive-project:not(:nth-child(3n + 1)) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .archive-project:nth-child(2n) {
+    padding-left: 1.25rem;
+    border-left: 1px solid #3b4842;
+  }
+
+  .streak-grid {
+    gap: 0.8rem;
   }
 
   .agent-preview {
@@ -1715,6 +2007,71 @@ svg {
   .project-grid {
     grid-template-columns: 1fr;
     gap: 2.8rem;
+  }
+
+  .project-archive {
+    margin-top: 2.6rem;
+  }
+
+  .project-archive summary {
+    min-height: 4rem;
+    font-size: 0.85rem;
+  }
+
+  .archive-count {
+    gap: 0.35rem;
+    font-size: 0.61rem;
+    white-space: nowrap;
+  }
+
+  .archive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-project,
+  .archive-project:not(:nth-child(3n + 1)),
+  .archive-project:nth-child(2n) {
+    padding: 1.15rem 0;
+    border-left: 0;
+  }
+
+  .archive-project p {
+    min-height: 0;
+  }
+
+  .streak-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .streak-card {
+    padding: 1.25rem;
+  }
+
+  .streak-metrics {
+    gap: 0.65rem;
+    margin-top: 1.7rem;
+  }
+
+  .streak-main-metric,
+  .streak-secondary-metric {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .streak-main-metric strong {
+    font-size: 3rem;
+  }
+
+  .streak-secondary-metric strong {
+    font-size: 2.45rem;
+  }
+
+  .streak-main-metric span,
+  .streak-secondary-metric span {
+    font-size: 0.61rem;
   }
 
   .project-card.project-featured {
